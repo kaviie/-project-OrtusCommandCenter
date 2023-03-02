@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="uhorn" format="2">
+	<advance width="819"/>
+	<unicode hex="01B0"/>
+	<outline>
+		<component base="u"/>
+		<component base="uni031B" xOffset="542" yOffset="-240"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>=+95</string>
+		</dict>
+	</lib>
+</glyph>

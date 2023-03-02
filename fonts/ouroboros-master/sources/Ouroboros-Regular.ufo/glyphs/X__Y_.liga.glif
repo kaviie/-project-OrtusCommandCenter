@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="X_Y.liga" format="2">
+	<advance width="1744"/>
+	<outline>
+		<component base="_part.X5"/>
+		<component base="_part.Y2" xOffset="842"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+			<array>
+				<dict>
+					<key>alignment</key>
+					<integer>-1</integer>
+					<key>index</key>
+					<integer>0</integer>
+					<key>name</key>
+					<string>_part.X5</string>
+				</dict>
+				<dict>
+					<key>alignment</key>
+					<integer>-1</integer>
+					<key>index</key>
+					<integer>1</integer>
+					<key>name</key>
+					<string>_part.Y2</string>
+				</dict>
+			</array>
+			<key>com.schriftgestaltung.Glyphs.leftMetricsKey</key>
+			<string>X</string>
+			<key>com.schriftgestaltung.Glyphs.rightMetricsKey</key>
+			<string>Y</string>
+		</dict>
+	</lib>
+</glyph>

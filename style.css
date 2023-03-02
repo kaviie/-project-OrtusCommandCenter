@@ -1,0 +1,211 @@
+/* COMMENTS */
+/*todo: the vision slider and textMarquee need tweaking. they no longer smoothly run on infinite loops.*/
+
+:root {
+    --primary: rgb(64, 74, 252);
+    --business: #ff2c2c;
+    --personal: var(--primary);
+    --gold: rgb(255, 215, 0);
+    --green: rgb(36, 233, 25);
+    --dark: #000000;
+    --danger: #ff5b57;
+    --purple: rgb(143, 99, 171);
+
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    --business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+    --personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Sigmar+One&display=swap');
+@font-face {
+    font-family: Foam;
+    src: url(/fonts/Foam.ttf);
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(/fonts/Montserrat_Alternates/MontserratAlternates-Bold.ttf);
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+    font-family: Goldman, sans-serif;
+    background: linear-gradient(gold,violet);
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    grid-gap: .5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 50% 1fr;
+    justify-content: center;
+    align-content: center;
+
+    border: 1rem solid greenyellow;
+
+}
+
+.item {
+    background: linear-gradient(yellow, blue, purple, red);
+    border: .25rem solid black;
+    color: aqua;
+    min-height: 100%;
+    overflow: scroll;
+
+    padding: .25rem;
+}
+
+.item-1 {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider {
+    min-height: 100%;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(250px * 18);
+    animation: scroll 60s linear infinite;
+}
+
+.slide-track:hover{
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 9));
+    }
+}
+
+.slide {
+    height: 250px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    perspective: 100px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    border-radius: 1rem;
+}
+
+img:hover{
+    transform: translateZ(20px);
+}
+
+.slider::before{
+    left: 0;
+    top: 0;
+}
+
+.slider::after{
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.item-2 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.textMarquee {
+    width: 100%;
+    background: var(--dark);
+    white-space: nowrap;
+    color: var(--gold);
+    overflow: hidden;
+    padding: 0.5rem;
+    z-index: 1;
+}
+.textMarquee div{
+    font-size: 3rem;
+    font-family: 'Sigmar One', sans-serif;
+    animation: animateTextMarquee 100s linear infinite;
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--gold);
+    padding-left: 100%;
+    display: inline-block;
+}
+@keyframes animateTextMarquee{
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.item-3 {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+.hero {
+    color: aqua;
+    font-family: Foam, sans-serif;
+    font-size: 2rem;
+}
+
+.item-4 {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.item-5 {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 5;
+}
+
+.item-6 {
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+
+@media (max-width: 40em) {
+    .grid-container {
+        grid-template-columns: none;
+        grid-template-rows: none;
+        grid-auto-flow: row;
+    }
+}
